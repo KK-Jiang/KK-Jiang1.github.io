@@ -70,7 +70,7 @@
 #ds-thread #ds-reset a.ds-user-name[data-user-id='bpplpp']:after {
 content: "博主";
 margin-left: 6px;
-font-size: 12px;
+font-size: 18px;
 color: #13BF20;
 background: rgba(255, 255, 255, .35);
 border-radius: 4px;
