@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } 
+    else{
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+    </style>
+
+  <meta charset="utf-8">
+  
+  <title>Git基本命令大全 | KK&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="GitTool">
+  
+  
+  
+  
+  <meta name="description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。">
+<meta name="keywords" content="Git,Tool">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基本命令大全">
+<meta property="og:url" content="http://jkknotes.com/Code-Tool/命令速查/Git基本命令大全.html">
+<meta property="og:site_name" content="KK&#39;s Notes">
+<meta property="og:description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.liaoxuefeng.com/files/attachments/918921150461184/0">
+<meta property="og:updated_time" content="2019-06-04T07:22:17.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git基本命令大全">
+<meta name="twitter:description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。">
+<meta name="twitter:image" content="https://www.liaoxuefeng.com/files/attachments/918921150461184/0">
+  
+    <link rel="alternate" href="/atom.xml" title="KK&#39;s Notes" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/fashion.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+  
+    <link rel="stylesheet" href="/css/vdonate.css">
+  
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="KK&#39;s Notes" rel="home"> KK&#39;s Notes </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">Write and do better.</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Git基本命令大全" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="https://www.liaoxuefeng.com/files/attachments/918921150461184/0" rel="gallery_cjwhh89su0002uf2h4jlaxao5">
+        <img src="https://www.liaoxuefeng.com/files/attachments/918921150461184/0" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+    
+      <header class="article-header">
+	    
+          
+  
+    <h1 class="thumb" itemprop="name">
+      <center>Git基本命令大全</center>
+    </h1>
+  
+
+
+	    
+      </header>
+    
+    <div class="article-meta">
+	  
+        
+	<a href="/Code-Tool/命令速查/Git基本命令大全.html" class="article-date">
+	  <time datetime="2019-06-04T07:08:22.000Z" itemprop="datePublished">June 4, 2019</time>
+	</a>
+
+        
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Code-Tool/">Code Tool</a>, <a class="article-category-link" href="/categories/Code-Tool/命令速查/">命令速查</a>
+
+        
+	<span id="busuanzi_container_page_pv">
+	  Views&nbsp;<a id="busuanzi_value_page_pv"></a>
+	</span>
+
+
+	  
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。<br>写过代码的人大都知道它，以写代码为生的人大都离不开它。<br><a id="more"></a></p>
+<p>官方文档实在太难用，这里参考大佬<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener"><strong>廖雪峰的教程</strong></a>，把常用命令总结写两下来，以供自己和一起搬砖的朋友备查。</p>
+<p>这里先介绍本地仓库的常用命令，再介绍涉及远程仓库和分支管理的常用命令。本文没有实例介绍讲解，只做命令备查。如需详细教程，请参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener"><strong>廖雪峰的Git教程</strong></a>。</p>
+<p>本文同步发在我的<a href="https://blog.csdn.net/iizhuzhu/article/details/90760926" target="_blank" rel="noopener">CSDN Blog</a>，欢迎各位看官大佬关注指教。</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="创建版本库并添加文件"><a href="#创建版本库并添加文件" class="headerlink" title="创建版本库并添加文件"></a>创建版本库并添加文件</h3><p>进入到需要<strong>创建版本库</strong>的文件夹，执行以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>git的本地库包含三部分：工作区、暂存区（stage）、分支（branch，默认为master），git add命令是将文件从工作区添加到暂存区，git commit命令是将文件从暂存区添加到分支，他们的关系如下图所示：<br><img src="https://www.liaoxuefeng.com/files/attachments/919020037470528/0" alt><br><strong>添加新文件或修改过的文件</strong>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add file1_name file2_name file3_name ....</span><br><span class="line">git commit -m <span class="string">'这里是对添加文件的说明'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>查看版本库的状态</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p><strong>创建分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名称</span><br></pre></td></tr></table></figure>
+<p><strong>切换分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名称</span><br></pre></td></tr></table></figure>
+<p><strong>创建并切换分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 分支名称</span><br></pre></td></tr></table></figure>
+<p><strong>删除分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名称</span><br></pre></td></tr></table></figure>
+<p><strong>查看所有分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p><strong>合并分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 准备与当前分支合并的分支名称</span><br></pre></td></tr></table></figure>
+<p><strong>若merge出现冲突，解决办法请参考</strong><a href="https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344" target="_blank" rel="noopener"><strong>这里</strong></a></p>
+<p><strong>stash功能</strong><br>当在当前分支编辑内容时，没有add和commit就切换到其它分支，发现其它分支中也会出现相应更改，stash功能可以解决这个问题。如果出现这种情况，正在当前分支编辑，需要临时去其他分支处理一些事情，但是当前分支又不能add和commit，这时就需要stash功能，可以它就像一个icebox，能当前工作冻结。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+<p>查看冻结列表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<p>想解冻2种方法：<br>第一种：解冻的同时把stash记录也删了，也就是在list中看不到了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure></p>
+<p>第二种：解冻不删list中记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
+<p>想删记录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash drop</span><br></pre></td></tr></table></figure>
+<h2 id="时光穿梭"><a href="#时光穿梭" class="headerlink" title="时光穿梭"></a>时光穿梭</h2><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>当不断对文件进行修改，然后不断提交修改到版本库里，难免会出现失误，把文件改乱或出现其他错误，就需要回到上一次或者之前任一次提交的状态。<br>首先<strong>查看提交历史记录</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p>返回结果中commit 后面的十六进制数即为该次提交的commit id。<br>想返回<strong>结果简化</strong>一点：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></table></figure>
+<p><strong>想看到merge情况</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --graph</span><br></pre></td></tr></table></figure>
+<p>同样有<strong>简化板</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph --pretty=oneline</span><br></pre></td></tr></table></figure>
+<p><strong>回退到上一版本</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard head^</span><br></pre></td></tr></table></figure>
+<p>同理，回退到上上版本就是head\^\^，以此类推，当然往上100个版本写100个^比较容易数不过来，所以写成head~100.<br>也可以<strong>根据commit id回到该版本</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [commit id前几位]</span><br></pre></td></tr></table></figure>
+<p>如果有20个版本，回退到第10个版本，但是后悔了，想回退到第15个版本，这是再去看提交历史记录，第11到20个版本的记录已经不在了，找不到commit id怎么办，可以用以下命令查到commit id前几位：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+<h3 id="撤销修改或删除"><a href="#撤销修改或删除" class="headerlink" title="撤销修改或删除"></a>撤销修改或删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file_name</span><br></pre></td></tr></table></figure>
+<p>file_name即为想撤销修改或删除的文件名<br>使用以上命令分三种情况：<br>1.工作区文件自修改后还没有被放到暂存区，现在撤销修改就回到版本库中分支一样的状态；<br>2.工作区文件自修改后已经添加到暂存区后，又作了修改或者删除，现在撤销修改或删除就回到和暂存区一样的状态；<br>3.工作区文件自修改后已经commit到分支，又作了修改或者删除，现在撤销或修删除改就回到和分支一样的状态。</p>
+<p><strong>撤销暂存区的修改或删除：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD file_name</span><br></pre></td></tr></table></figure>
+<p>如果commit到了分支，直接版本回退吧</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p><strong>从远程仓库克隆：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 地址</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b 分支名称 地址</span><br></pre></td></tr></table></figure>
+<p><strong>将本地分支推送到远程库</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin 当前分支名称</span><br></pre></td></tr></table></figure>
+<p><strong>将远程库拉取到本地分支</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin 要拉取到分支名称</span><br></pre></td></tr></table></figure>
+<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p>给当前分支<strong>打标签</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag 标签内容</span><br></pre></td></tr></table></figure></p>
+<p><strong>指定commit id打标签</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag 标签内容 commit id前几位</span><br></pre></td></tr></table></figure>
+<p><strong>查看标签</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
+<p><strong>查看标签详细情况</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag 标签内容</span><br></pre></td></tr></table></figure>
+<p><strong>删除标签</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d 标签内容</span><br></pre></td></tr></table></figure>
+<p><strong>推送一个本地标签</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin 标签内容</span><br></pre></td></tr></table></figure>
+<p><strong>推送全部未推送过的本地标签</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+<p><strong>删除一个远程标签</strong><br>现在本地删除：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d 标签内容</span><br></pre></td></tr></table></figure>
+<p>再执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/标签内容</span><br></pre></td></tr></table></figure>
+<p>好了，就这么多，如有错误望指出。</p>
+
+      
+    </div>
+	
+      <b>转载声明：本文为博主原创文章，尊重他人劳动成果，转载请注明出处 © <a href target="_blank">KK.J</a></b>
+    
+    <footer class="entry-meta entry-footer">
+	  
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '赞赏是不耍流氓的鼓励', // 可选参数，打赏标题
+  btnText: '打赏', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: '/css/images/wepay.jpg',
+  alipayImage: '/css/images/alipay.jpg'
+});
+</script>
+      
+      
+        <div class="bdsharebuttonbox">
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="Share to Wechat"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="Share to Weibo"></a>
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="Share to Qzone"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+	<!-- class="bds_count" data-cmd="count"></-->
+</div>
+<script>
+    window._bd_share_config={
+		"common":{
+			"bdSnsKey":{},
+			"bdText":"",
+			"bdMini":"2",
+			"bdMiniList":["douban","sqq","youdao","mail","fbook","twi","linkedin","evernotecn","copy"],
+			"bdPic":"",
+			"bdStyle":"1",
+			"bdSize":"16"},
+		"share":{}
+	};
+with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/Life/Hello-life/Hello-life（一）.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello! life（一）—— 理工男的觉悟</div>
+    </a>
+  
+</nav>
+
+  
+  
+	
+    <div id="vcomments"></div>
+	<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: '2D30CEQ8V1SWbAhEuhAVDLff-gzGzoHsz',
+            appKey: 'OoybxmzBIBcKIlDStoAh6dmV',
+            placeholder: '填写昵称即可评论，email 可选. Come on !',
+            notify: false,
+            verify: false,
+            avatar: 'monsterid',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'en'.toLowerCase()
+        })
+	//增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+    </script>
+
+
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库并添加文件"><span class="nav-number">1.1.</span> <span class="nav-text">创建版本库并添加文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支管理"><span class="nav-number">1.2.</span> <span class="nav-text">分支管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时光穿梭"><span class="nav-number">2.</span> <span class="nav-text">时光穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退"><span class="nav-number">2.1.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销修改或删除"><span class="nav-number">2.2.</span> <span class="nav-text">撤销修改或删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库"><span class="nav-number">3.</span> <span class="nav-text">远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签管理"><span class="nav-number">4.</span> <span class="nav-text">标签管理</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 KK.J All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              &nbsp;&nbsp;Visitors: <span id="busuanzi_value_site_uv"></span>  
+              &nbsp;&nbsp;Page Views: <span id="busuanzi_value_site_pv"></span>
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1276886854&web_id=1276886854" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s23.cnzz.com/z_stat.php?id=1276886854&web_id=1276886854" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
