@@ -51,7 +51,7 @@
 <meta property="og:description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。 官方文档实在太难用，这里参考大佬廖雪峰的教程，把常用命令总结写两下来，以供自己和一起搬砖的朋友备查。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg">
-<meta property="og:updated_time" content="2019-06-05T04:53:00.413Z">
+<meta property="og:updated_time" content="2019-06-05T04:58:46.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git基本命令大全">
 <meta name="twitter:description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。 官方文档实在太难用，这里参考大佬廖雪峰的教程，把常用命令总结写两下来，以供自己和一起搬砖的朋友备查。">
@@ -148,7 +148,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg" rel="gallery_cjwirb2be0000lu2hzsuj09qf">
+      <a class="article-gallery-img fancybox" href="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg" rel="gallery_cjwiri53b0000q02h2bd8cyfv">
         <img src="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg" itemprop="image">
       </a>
     
@@ -195,7 +195,7 @@
 <p>这里先介绍本地仓库的常用命令，再介绍涉及远程仓库和分支管理的常用命令。本文没有实例介绍讲解，只做命令备查。如需详细教程，请参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener"><strong>廖雪峰的Git教程</strong></a>。</p>
 <p>本文同步发在我的<a href="https://blog.csdn.net/iizhuzhu/article/details/90760926" target="_blank" rel="noopener">CSDN Blog</a>，欢迎各位看官大佬关注指教。</p>
 <h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="创建版本库并添加文件"><a href="#创建版本库并添加文件" class="headerlink" title="创建版本库并添加文件"></a>创建版本库并添加文件</h3><p>进入到需要<strong>创建版本库</strong>的文件夹，执行以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
-<p>git的本地库包含三部分：工作区、暂存区（stage）、分支（branch，默认为master），git add命令是将文件从工作区添加到暂存区，git commit命令是将文件从暂存区添加到分支，他们的关系如下图所示：<br><img src="https://www.liaoxuefeng.com/files/attachments/919020037470528/0" alt><br><strong>添加新文件或修改过的文件</strong>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add file1_name file2_name file3_name ....</span><br><span class="line">git commit -m <span class="string">'这里是对添加文件的说明'</span></span><br></pre></td></tr></table></figure></p>
+<p>git的本地库包含三部分：工作区、暂存区（stage）、分支（branch，默认为master），git add命令是将文件从工作区添加到暂存区，git commit命令是将文件从暂存区添加到分支，他们的关系如下图所示：<br><img src="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a2.jpeg" alt><br><strong>添加新文件或修改过的文件</strong>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add file1_name file2_name file3_name ....</span><br><span class="line">git commit -m <span class="string">'这里是对添加文件的说明'</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>查看版本库的状态</strong>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 <h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p><strong>创建分支</strong></p>
