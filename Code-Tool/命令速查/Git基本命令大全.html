@@ -51,7 +51,7 @@
 <meta property="og:description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。 官方文档实在太难用，这里参考大佬廖雪峰的教程，把常用命令总结写两下来，以供自己和一起搬砖的朋友备查。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg">
-<meta property="og:updated_time" content="2019-06-05T03:58:24.578Z">
+<meta property="og:updated_time" content="2019-06-05T04:53:00.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git基本命令大全">
 <meta name="twitter:description" content="Git —— 大名鼎鼎的分布式版本控制系统，据说是Linux系统之父Linus花两周时间写出来的，怎一个牛字了得。写过代码的人大都知道它，以写代码为生的人大都离不开它。 官方文档实在太难用，这里参考大佬廖雪峰的教程，把常用命令总结写两下来，以供自己和一起搬砖的朋友备查。">
@@ -148,7 +148,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg" rel="gallery_cjwiq38uq00027e2h39z8uo9q">
+      <a class="article-gallery-img fancybox" href="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg" rel="gallery_cjwirb2be0000lu2hzsuj09qf">
         <img src="https://raw.githubusercontent.com/KK-Jiang/cloud_img/master/1906/a1.jpeg" itemprop="image">
       </a>
     
@@ -230,7 +230,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph --pretty=oneline</span><br></pre></td></tr></table></figure>
 <p><strong>回退到上一版本</strong>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard head^</span><br></pre></td></tr></table></figure>
-<p>同理，回退到上上版本就是head\^\^，以此类推，当然往上100个版本写100个^比较容易数不过来，所以写成head~100.<br>也可以<strong>根据commit id回到该版本</strong>：</p>
+<p>同理，回退到上上版本就是head^^，以此类推，当然往上100个版本写100个^比较容易数不过来，所以写成head~100.<br>也可以<strong>根据commit id回到该版本</strong>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [commit id前几位]</span><br></pre></td></tr></table></figure>
 <p>如果有20个版本，回退到第10个版本，但是后悔了，想回退到第15个版本，这是再去看提交历史记录，第11到20个版本的记录已经不在了，找不到commit id怎么办，可以用以下命令查到commit id前几位：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
